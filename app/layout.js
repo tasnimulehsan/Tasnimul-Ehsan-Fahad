@@ -123,4 +123,4 @@ export default function Layout({ children }) {
       </body>
     </html>
   );
-}import "./globals.css";export const metadata={title:"Tasnimul Ehsan Fahad — Curious by default",description:"A colorful personal portfolio by Tasnimul Ehsan Fahad."};export default function Layout({children}){return <html lang="en"><body className="noise">{children}</body></html>}
+}

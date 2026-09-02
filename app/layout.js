@@ -83,7 +83,14 @@ const personSchema = {
     "Exploring AI, technology, web, and digital experiments.",
   sameAs: [
     "https://github.com/tasnimulehsan",
+    "https://www.facebook.com/tasnimulehsan.fahad",
+    "https://www.instagram.com/tasnimulehsan.fahad",
+    "https://www.linkedin.com/in/tasnimulehsanfahad",
+    "https://www.threads.com/tasnimulehsan.fahad",
+    "https://youtube.com/@tefahad",
     "https://www.facebook.com/selfahad",
+    "https://500px.com/p/tasnimulehsan",
+    "https://www.shutterstock.com/g/tasnimulehsan",
   ],
 };
 

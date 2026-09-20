@@ -1,3 +1,4 @@
+import ThreeBackground from "../components/ThreeBackground";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
@@ -8,7 +9,8 @@ import Projects from "../components/Projects";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main className="relative overflow-hidden">
+      <ThreeBackground />
       <Navbar />
       <Hero />
 

@@ -1,4 +1,4 @@
-import "./globals.css";
+import Script from "next/script";
 
 const siteUrl = "https://tefahad.com";
 
@@ -89,6 +89,7 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       <body className="noise">
+        <Script src="https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.min.js" strategy="beforeInteractive" />
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />

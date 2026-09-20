@@ -1,12 +1,18 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ThreeBackground() {
   const mountRef = useRef(null);
+  const [hasThree, setHasThree] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined" || !window.THREE || !mountRef.current) return;
+    if (typeof window === "undefined" || !mountRef.current) return;
+
+    if (!window.THREE) {
+      setHasThree(false);
+      return;
+    }
 
     const THREE = window.THREE;
     const mount = mountRef.current;
@@ -69,6 +75,7 @@ export default function ThreeBackground() {
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     };
 
+    setHasThree(true);
     window.addEventListener("pointermove", onPointerMove);
     window.addEventListener("resize", handleResize);
 
@@ -96,9 +103,20 @@ export default function ThreeBackground() {
       geometry.dispose();
       material.dispose();
       renderer.dispose();
-      mount.removeChild(renderer.domElement);
+      if (mount.contains(renderer.domElement)) {
+        mount.removeChild(renderer.domElement);
+      }
     };
   }, []);
+
+  if (!hasThree) {
+    return (
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(139,92,246,0.22),transparent_40%),radial-gradient(circle_at_bottom,_rgba(34,211,238,0.18),transparent_35%)]"
+      />
+    );
+  }
 
   return <div ref={mountRef} className="pointer-events-none fixed inset-0 -z-10 opacity-80" aria-hidden="true" />;
 }

@@ -87,8 +87,8 @@ const websiteSchema = {
 
 export default function Layout({ children }) {
   return (
-    <html lang="en">
-      <body className="noise">
+    <html lang="en" suppressHydrationWarning>
+      <body className="noise min-h-screen bg-[#09090b] text-white">
         <Script src="https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.min.js" strategy="beforeInteractive" />
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />

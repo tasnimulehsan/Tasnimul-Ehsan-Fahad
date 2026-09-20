@@ -14,17 +14,7 @@ export const metadata = {
   authors: [{ name: "Tasnimul Ehsan Fahad", url: siteUrl }],
   creator: "Tasnimul Ehsan Fahad",
   publisher: "Tasnimul Ehsan Fahad",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
+  robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -38,11 +28,7 @@ export const metadata = {
     title: "Tasnimul Ehsan Fahad | AI, Technology & Digital Experiments",
     description: "AI, technology, web, and digital experiments by Tasnimul Ehsan Fahad.",
   },
-  icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
-  },
+  icons: { icon: "/icon.svg", shortcut: "/icon.svg", apple: "/icon.svg" },
 };
 
 const personSchema = {
@@ -51,14 +37,7 @@ const personSchema = {
   name: "Tasnimul Ehsan Fahad",
   url: siteUrl,
   description: "Exploring AI, technology, web, and digital experiments.",
-  knowsAbout: [
-    "Artificial Intelligence",
-    "Web Development",
-    "Open Source",
-    "Python",
-    "JavaScript",
-    "Linux",
-  ],
+  knowsAbout: ["Artificial Intelligence", "Web Development", "Open Source", "Python", "JavaScript", "Linux"],
   sameAs: [
     "https://github.com/tasnimulehsan",
     "https://www.facebook.com/tasnimulehsan.fahad",
@@ -78,16 +57,16 @@ const websiteSchema = {
   name: "Tasnimul Ehsan Fahad",
   url: siteUrl,
   description: "AI, technology, web, and digital experiments by Tasnimul Ehsan Fahad.",
-  publisher: {
-    "@type": "Person",
-    name: "Tasnimul Ehsan Fahad",
-    url: siteUrl,
-  },
+  publisher: { "@type": "Person", name: "Tasnimul Ehsan Fahad", url: siteUrl },
 };
 
 export default function Layout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Public fallback remains available even if a generated /_next CSS asset is cached or unavailable. */}
+        <link rel="stylesheet" href="/fallback.css" />
+      </head>
       <body className="noise min-h-screen bg-[#09090b] text-white">
         <Script src="https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.min.js" strategy="beforeInteractive" />
         {children}

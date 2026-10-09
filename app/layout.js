@@ -1,15 +1,15 @@
-import Script from "next/script";
+import "./globals.css";
 
 const siteUrl = "https://tefahad.com";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Tasnimul Ehsan Fahad | AI, Technology & Digital Experiments",
-    template: "%s | Tasnimul Ehsan Fahad",
+    default: "Fahad — Creative Developer",
+    template: "%s | Fahad",
   },
   description:
-    "Tasnimul Ehsan Fahad explores AI, technology, web, and digital experiments—building useful things and sharing the “oh, I didn’t know that” moments.",
+    "Fahad builds tactile digital experiences where code meets atmosphere — from WebGL experiments to thoughtful interfaces.",
   alternates: { canonical: "/" },
   authors: [{ name: "Tasnimul Ehsan Fahad", url: siteUrl }],
   creator: "Tasnimul Ehsan Fahad",
@@ -18,15 +18,15 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Tasnimul Ehsan Fahad | AI, Technology & Digital Experiments",
-    description: "AI, technology, web, and digital experiments by Tasnimul Ehsan Fahad.",
+    title: "Fahad — Creative Developer",
+    description: "Interfaces with a pulse. Digital experiences with a point of view.",
     siteName: "Tasnimul Ehsan Fahad",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tasnimul Ehsan Fahad | AI, Technology & Digital Experiments",
-    description: "AI, technology, web, and digital experiments by Tasnimul Ehsan Fahad.",
+    title: "Fahad — Creative Developer",
+    description: "Interfaces with a pulse. Digital experiences with a point of view.",
   },
   icons: { icon: "/icon.svg", shortcut: "/icon.svg", apple: "/icon.svg" },
 };
@@ -63,12 +63,7 @@ const websiteSchema = {
 export default function Layout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Public fallback remains available even if a generated /_next CSS asset is cached or unavailable. */}
-        <link rel="stylesheet" href="/fallback.css" />
-      </head>
-      <body className="noise min-h-screen bg-[#09090b] text-white">
-        <Script src="https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.min.js" strategy="beforeInteractive" />
+      <body>
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
